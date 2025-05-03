@@ -320,4 +320,21 @@ function fEsp()
                                 kVars.Esp[v.Name].sq.Filled = false
                                 kVars.Esp[v.Name].sq.Color = Color3.fromRGB(0, 255, 60)
                                 local vector, onScreen = game.Workspace.CurrentCamera:WorldToViewportPoint(pHead.Position)
-                                kVars.Esp[v.Name].sq.Position = Vector2.new(vector
+                                kVars.Esp[v.Name].sq.Position = Vector2.new(vector.X - (kVars.Esp[v.Name].sq.Size.X/2), vector.Y - (kVars.Esp[v.Name].sq.Size.Y/2))
+                                kVars.Esp[v.Name].sq.Visible = onScreen
+                                -- esp text
+                                kVars.Esp[v.Name].txt = Drawing.new("Text")
+                                kVars.Esp[v.Name].txt.Text = v.Name
+                                kVars.Esp[v.Name].txt.Size = 14
+                                kVars.Esp[v.Name].txt.Center = true
+                                kVars.Esp[v.Name].txt.Visible = false
+                                kVars.Esp[v.Name].txt.Color = Color3.fromRGB(255,255,255)
+                                kVars.Esp[v.Name].txt.Position = Vector2.new(vector.X, vector.Y)
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+end
