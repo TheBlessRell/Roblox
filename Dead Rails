@@ -36,7 +36,7 @@ local function sendNotification(title, text, duration)
 end
 
 local function loadScript()
-    local scriptURL = "https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua"
+    local scriptURL = "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Dead%20Rails"
     local success, result = pcall(function()
         return loadstring(game:HttpGet(scriptURL))()
     end)
