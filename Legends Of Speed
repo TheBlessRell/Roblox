@@ -1,0 +1,160 @@
+local VLib = loadstring(game:HttpGet("https://gitlab.com/L1ZOT/test-project/-/raw/main/PJM-GUI"))()
+local Win = VLib:Window("Project Meow", "Speed of Legends")
+local Main = Win:Tab("Main")
+local Autofarm = Win:Tab("Autofarm")
+local Credits = Win:Tab("Credits")
+
+if game.workspace:FindFirstChild("ManahubPart") == nil then
+    local ManahubPart = Instance.new("Part")
+    ManahubPart.Name = "ManahubPart"
+    ManahubPart.Parent = game.Workspace
+    ManahubPart.Anchored = true
+    ManahubPart.Transparency = 0
+    ManahubPart.Size = Vector3.new(30,-0.5,30)
+    ManahubPart.Position = Vector3.new(-543.452, 2873.2, 324.647)
+end
+
+Main:Slider("WalkSpeed", 0, 250, 16, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+
+Main:Slider("JumpPower", 0, 250, 50, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+
+Autofarm:Toggle("Auto Steps", false, function (t)
+    getgenv().Autostep = t
+    while wait() do
+        if getgenv().Autostep then
+            pcall(function ()
+                for i = 1,20 do
+                    local args = {"collectOrb", "Red Orb", "City"}
+                    game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                    local args = {"collectOrb", "Blue Orb", "City"}
+                    game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                end
+            end)
+        end
+    end
+end)
+
+Autofarm:Toggle("Auto collect gems", false, function(t)
+    spawn(function()
+        getgenv().AutocollectDiamonds = t
+        while task.wait() do
+            if getgenv().AutocollectDiamonds then
+                pcall(function()
+                    for i = 1,10 do
+                        game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
+                        game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "Desert")
+                        game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "Magma City")
+                    end
+                end)
+            end
+        end
+    end)
+end)
+
+Autofarm:Toggle("Hops Farm", false, function(t)
+    getgenv().Autohops = t
+    while task.wait() do
+        if getgenv().Autohops then
+            for i,v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+                v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            end
+        end
+    end
+end)
+
+Autofarm:Toggle("Safe Hops Farm", false, function(t)
+    HoopsFarm = t
+end)
+
+spawn(function()
+    while task.wait() do
+        if HoopsFarm then
+            pcall(function()
+                for i,v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+                    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    wait(.3)
+                end
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while task.wait(.3) do
+        if HoopsFarm then
+            pcall(function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-547.52026, 2893.19995, 327.647003)
+            end)
+        end
+    end
+end)
+
+Autofarm:Toggle("AutoRebirth", false, function(t)
+    spawn(function()
+        getgenv().AutoRebirth = t
+        while wait() do
+            if getgenv().AutoRebirth then
+                pcall(function ()
+                    game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+                    game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+                end)
+            end
+        end
+    end)
+end)
+
+Autofarm:Button("Collect Chests", false, function()
+    game:GetService("ReplicatedStorage").rEvents.groupRemote:InvokeServer("groupRewards")
+    game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Enchanted Chest")
+    wait()
+    game:GetService("ReplicatedStorage").rEvents.collectCourseChestRemote:InvokeServer(workspace.rewardChests.rewardChest)
+end)
+
+-- ✅ Updated Credits Section
+Credits:Button("Rell", function()
+    setclipboard("https://discord.gg/srWfKRx745")
+end)
+
+Credits:Button("Rell", function()
+    setclipboard("https://discord.gg/srWfKRx745")
+end)
+
+Credits:Button("UI Designer: Rell", function()
+    setclipboard("https://discord.gg/srWfKRx745")
+end)
+
+Credits:Button("The Shop Discord Server", function()
+    setclipboard("https://discord.gg/srWfKRx745")
+    local req = (syn and syn.request) or (http and http.request) or http_request
+    if req then
+        req({
+            Url = 'http://127.0.0.1:6463/rpc?v=1',
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json',
+                Origin = 'https://discord.com'
+            },
+            Body = game:GetService('HttpService'):JSONEncode({
+                cmd = 'INVITE_BROWSER',
+                nonce = game:GetService('HttpService'):GenerateGUID(false),
+                args = {code = 'srWfKRx745'}
+            })
+        })
+    end
+end)
+
+Credits:line()
+
+Credits:Button("Destroy Gui", function()
+    game.CoreGui:FindFirstChild("woof"):Destroy()
+end)
+
+Credits:Button("Rejoin", function()
+    local ts = game:GetService("TeleportService")
+    local p = game:GetService("Players").LocalPlayer
+    ts:Teleport(game.PlaceId, p)
+end)
