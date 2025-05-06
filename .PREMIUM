@@ -11,7 +11,7 @@ function GetGame()
         return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"))()'
     elseif ID == 1240123653 then
         return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"))()'
-    if ID == 8554378337 then
+    elseif ID == 8554378337 then
         return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"))()'
     else
         print("Game is not supported.")
