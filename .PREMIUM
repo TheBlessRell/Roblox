@@ -13,6 +13,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"
     elseif ID == 8554378337 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"
+    elseif ID == 16732694052 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Fisch"
     else
         print("Game is not supported.")
         return nil
