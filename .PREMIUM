@@ -1,0 +1,46 @@
+local ID = game.PlaceId
+local Players = game:GetService("Players")
+local plr = Players.LocalPlayer
+
+function GetGame()
+    if ID == 3101667897 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"
+    elseif ID == 606849621 then
+        return "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"
+    elseif ID == 16472538603 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"
+    elseif ID == 1240123653 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"
+        else
+        print("Game is not supported.")
+        return nil
+    end
+end
+
+local gameScript = GetGame()
+
+if gameScript then
+    loadstring(game:HttpGet(baseURL .. gameScript))()
+end
+
+for _, v in next, getconnections(plr.Idled) do
+    v:Disable()
+end
+
+local VirtualUser = game:GetService("VirtualUser")
+local status = getgenv().afk_toggle
+if status == nil then
+    getgenv().afk_toggle = false
+end
+
+if not plr then
+    error("Failed to get LocalPlayer reference")
+end
+
+plr.Idled:Connect(function()
+    if not getgenv().afk_toggle then return end
+    pcall(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end)
+end)
