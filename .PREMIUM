@@ -4,15 +4,15 @@ local plr = Players.LocalPlayer
 
 function GetGame()
     if ID == 3101667897 then
-        return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"))()'
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"
     elseif ID == 606849621 then
-        return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"))()'
+        return "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"
     elseif ID == 16472538603 then
-        return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"))()'
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"
     elseif ID == 1240123653 then
-        return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"))()'
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"
     elseif ID == 8554378337 then
-        return 'loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"))()'
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"
     else
         print("Game is not supported.")
         return nil
@@ -22,9 +22,8 @@ end
 local gameScript = GetGame()
 
 if gameScript then
-    -- Evaluate the returned loadstring call directly
     local success, err = pcall(function()
-        loadstring(gameScript)()
+        loadstring(game:HttpGet(gameScript))()
     end)
 
     if not success then
