@@ -15,6 +15,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"
     elseif ID == 16732694052 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Fisch"
+    elseif ID == 126884695634066 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Grow%20A%20Garden"
     else
         print("Game is not supported.")
         return nil
