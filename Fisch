@@ -750,7 +750,7 @@ local DiscordButton = CreditsGroup:AddButton({
 })
 
 local DiscordButton2 = CreditsGroup:AddButton({
-    Text = 'Copy The Shop's Discord link',
+    Text = 'Copy The Shops Discord link',
     Func = function()
         setclipboard('https://discord.gg/VudXCDCaBN')
     end,
