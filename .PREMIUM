@@ -4,13 +4,13 @@ local plr = Players.LocalPlayer
 
 function GetGame()
     if ID == 3101667897 then
-        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"
+        return "loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"))()"
     elseif ID == 606849621 then
-        return "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"
+        return "loadstring(game:HttpGet("https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"))()"
     elseif ID == 16472538603 then
-        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"
+        return "loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"))()"
     elseif ID == 1240123653 then
-        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"
+        return "loadstring(game:HttpGet("https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"))()
         else
         print("Game is not supported.")
         return nil
