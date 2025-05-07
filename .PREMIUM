@@ -17,6 +17,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Fisch"
     elseif ID == 126884695634066 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Grow%20A%20Garden"
+    elseif ID == 116495829188952 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Dead%20Rails"
     else
         print("Game is not supported.")
         return nil
