@@ -737,7 +737,7 @@ FreezeCharacterGroup:AddToggle('FreezeCharacter', {
 local SettingsGroup = Tabs.Settings:AddLeftGroupbox('Settings')
 local CreditsGroup = Tabs.Settings:AddRightGroupbox('Credits')
 
-CreditsGroup:AddLabel('Made by kylosilly and netpa!')
+CreditsGroup:AddLabel('Made by Rell!')
 CreditsGroup:AddLabel('Made with love and hate :3')
 
 local DiscordButton = CreditsGroup:AddButton({
@@ -752,7 +752,7 @@ local DiscordButton = CreditsGroup:AddButton({
 local DiscordButton2 = CreditsGroup:AddButton({
     Text = 'Copy The Shops Discord link',
     Func = function()
-        setclipboard('https://discord.gg/VudXCDCaBN')
+        setclipboard('https://discord.gg/srWfKRx745')
     end,
     DoubleClick = false,
     Tooltip = 'https://discord.gg/srWfKRx745'
