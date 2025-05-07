@@ -25,7 +25,7 @@ local WatermarkConnection = game:GetService('RunService').RenderStepped:Connect(
         FrameCounter = 0;
     end;
 
-    Library:SetWatermark(('Rinns Hub V1.2.3 | %s fps | %s ms'):format(
+    Library:SetWatermark(('The Shop Made It | %s fps | %s ms'):format(
         math.floor(FPS),
         math.floor(game:GetService('Stats').Network.ServerStatsItem['Data Ping']:GetValue())
     ));
