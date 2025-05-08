@@ -1,0 +1,189 @@
+if game.PlaceId == 85896571713843 then
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "🔥 The Shop | Bubble Gum Simulator Infinity",
+    LoadingTitle = "🔥 Bubble Gum Simulator 🫧",
+    LoadingSubtitle = "Made by Rell",
+    Theme = "Purple",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "Rell",
+        FileName = "Rell the goat"
+    },
+    Discord = {
+        Enabled = true,
+        Invite = "srWfKRx745"
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Key | The Shop Hub",
+        Subtitle = "Key System",
+        Note = "Get the key from the Discord server",
+        FileName = "The Shop Key",
+        SaveKey = true,
+        GrabKeyFromSite = true,
+        Key = {
+            "RELLMADEIT"
+        }
+    }
+})
+
+-- Global state variables
+local State = {
+    AutoBubble = false,
+    AutoSellBubble = false,
+    AutoFarmOrbs = false,
+    AutoCollectChests = false,
+    AutoClaimRewards = false,
+    BubbleDelay = 0.1,
+    SellDelay = 0.5,
+    Log = {}
+}
+
+-- General notification function
+local function Notify(title, content, duration)
+    Rayfield:Notify({
+        Title = title,
+        Content = content,
+        Duration = duration or 5,
+        Image = 4483362458
+    })
+    table.insert(State.Log, os.date("%X") .. " - " .. title .. ": " .. content)
+end
+
+-- General auto task function
+local function AutoTask(toggle, delay, callback)
+    State[toggle] = not State[toggle]
+    Notify(toggle, State[toggle] and "Started!" or "Stopped!", 3)
+    if State[toggle] then
+        task.spawn(function()
+            while State[toggle] do
+                task.wait(delay)
+                if not game.Players.LocalPlayer.Character then
+                    Notify(toggle, "Player is invalid!", 3)
+                    break
+                end
+                callback()
+            end
+        end)
+    end
+end
+
+-- Create tabs
+local MainTab = Window:CreateTab("🫧 Main", { Icon = "rbxassetid://6026568198" })
+local FarmingTab = Window:CreateTab("🎁 Farming", { Icon = "rbxassetid://6031260796" })
+local SettingsTab = Window:CreateTab("⚙️ Settings", { Icon = "rbxassetid://6031075938" })
+local CreditsTab = Window:CreateTab("⭐ Credits", { Icon = "rbxassetid://6023426926" })
+local LogTab = Window:CreateTab("📜 Log", { Icon = "rbxassetid://6031075938" })
+
+-- Main features
+MainTab:CreateToggle({
+    Name = "Auto Bubble",
+    CurrentValue = false,
+    Callback = function()
+        AutoTask("AutoBubble", State.BubbleDelay, function()
+            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("BlowBubble")
+        end)
+    end
+})
+
+MainTab:CreateToggle({
+    Name = "Auto Sell Bubble",
+    CurrentValue = false,
+    Callback = function()
+        AutoTask("AutoSellBubble", State.SellDelay, function()
+            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("SellBubble")
+        end)
+    end
+})
+
+MainTab:CreateSlider({
+    Name = "Auto Bubble Delay",
+    Range = {0.05, 1},
+    Increment = 0.05,
+    Suffix = "Seconds",
+    CurrentValue = State.BubbleDelay,
+    Callback = function(Value)
+        State.BubbleDelay = Value
+    end
+})
+
+MainTab:CreateSlider({
+    Name = "Auto Sell Delay",
+    Range = {0.05, 2},
+    Increment = 0.05,
+    Suffix = "Seconds",
+    CurrentValue = State.SellDelay,
+    Callback = function(Value)
+        State.SellDelay = Value
+    end
+})
+
+-- Farming features
+FarmingTab:CreateToggle({
+    Name = "Auto Farm Orbs",
+    CurrentValue = false,
+    Callback = function()
+        AutoTask("AutoFarmOrbs", 0.2, function()
+            for _, v in pairs(workspace:FindFirstChild("Orbs"):GetChildren()) do
+                if v:IsA("Model") and v:FindFirstChild("TouchInterest") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 1)
+                end
+            end
+        end)
+    end
+})
+
+FarmingTab:CreateToggle({
+    Name = "Auto Collect Chests",
+    CurrentValue = false,
+    Callback = function()
+        AutoTask("AutoCollectChests", 0.5, function()
+            for _, v in pairs(workspace:FindFirstChild("Chests"):GetChildren()) do
+                if v:IsA("Model") and v:FindFirstChild("TouchInterest") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 1)
+                end
+            end
+        end)
+    end
+})
+
+FarmingTab:CreateToggle({
+    Name = "Auto Claim Rewards",
+    CurrentValue = false,
+    Callback = function()
+        AutoTask("AutoClaimRewards", 5, function()
+            game:GetService("ReplicatedStorage").Shared.Framework.Network.Remote.Event:FireServer("ClaimReward")
+        end)
+    end
+})
+
+-- Settings info
+SettingsTab:CreateParagraph({
+    Title = "The Shop Hub Info",
+    Content = "Bubble Gum Simulator Infinity Script. Join Discord: https://discord.gg/srWfKRx745"
+})
+
+-- Credits
+CreditsTab:CreateParagraph({
+    Title = "Credits",
+    Content = "Script made by Rell. Thank you for using The Shop!"
+})
+
+-- Log viewer
+LogTab:CreateButton({
+    Name = "Show Log",
+    Callback = function()
+        local logContent = table.concat(State.Log, "\n")
+        Rayfield:CreateParagraph({
+            Title = "Activity Log",
+            Content = logContent
+        })
+    end
+})
+
+end
