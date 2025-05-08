@@ -1,0 +1,494 @@
+local players = game:GetService("Players")
+local player = players.LocalPlayer
+local teams = game:GetService("Teams")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/hzhzhzsjjs/Zhzh/refs/heads/main/The%20ssi"))()
+
+MakeWindow({
+  Hub = {
+    Title = "🔥👀 - The Shop! - 🔥👀",
+    Animation = "NEL BACHIRA!!!"
+  },
+  Key = {
+    KeySystem = false,
+    Title = "🔥👀 - GET ALL STYLES - 🔥👀",
+    Description = "^ AND FLOWS! ^",
+    KeyLink = "https://discord.gg/yM9MeK37",
+    Keys = {"zbjssiisjdhd", "isopods", "huausushsj", "sshshhsshu", "sususu37"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Correct Key 🥰",
+      Incorrectkey = "False😡‼️",
+      CopyKeyLink = "Paste Copied Link To Browser"
+    }
+  }
+})
+
+MinimizeButton({
+  Image = "rbxassetid://84442594910404",
+  Size = {50, 50},
+  Color = Color3.fromRGB(255, 255, 255),
+  Corner = true,
+  Stroke = true,
+  StrokeColor = Color3.fromHSV(0.5, 1, 1)  -- Hue: 180° for cyan
+})
+
+MakeNotifi({
+  Title = "Nice Work👏!",
+  Text = "Boom!🤤✅",
+  Time = 5
+})
+
+local Main = MakeTab({Name = "INFO"})
+
+local Image = AddImageLabel(Main, {
+  Name = "PresidentZuyi",
+  Image = "rbxassetid://84442594910404"
+})
+local Paragraph1 = AddParagraph(Main, {"W RELL", "CREDIT"})
+local Paragraph2 = AddParagraph(Main, {"W RELL", "INFO"})
+local Paragraph3 = AddParagraph(Main, {"W RELL"})
+local Paragraph4 = AddParagraph(Main, {"W RE::"})
+
+-- Auto
+local Main = MakeTab({Name = "Styles"})
+
+AddButton(Main, { 
+  Name = "Isagi", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Isagi"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Chigiri", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Chigiri"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Kurona", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Kurona"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Igaguri", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Igaguri"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Hiori", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Hiori"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Gagamaru", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Gagamaru"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Otoya", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Otoya"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Bachira", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Bachira"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Nagi", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Nagi"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Reo", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Reo"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Karasu", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Karasu"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Shidou", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Shidou"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Yukimiya", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Yukimiya"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "NEL Bachira", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "NEL Bachira"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "King", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "King"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Kunigami", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Kunigami"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Aiku", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Aiku"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Rin", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Rin"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Sae", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Sae"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "NEL Isagi", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "NEL Isagi"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Kaiser", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Kaiser"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Don Lorenzo", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Don Lorenzo"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
