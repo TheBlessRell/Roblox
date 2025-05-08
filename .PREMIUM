@@ -21,6 +21,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Dead%20Rails"
     elseif ID == 13772394625 or ID == 4777817887 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blade%20Ball"
+    elseif ID == 18668065416 or ID == 6325068386 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blue%20Lock"
     else
         print("Game is not supported.")
         return nil
