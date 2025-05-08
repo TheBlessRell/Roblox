@@ -3,22 +3,24 @@ local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
 
 function GetGame()
-    if ID == 3101667897 then
+    if ID == 3101667897 or ID == 1119466531 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Legends%20Of%20Speed"
-    elseif ID == 606849621 then
+    elseif ID == 606849621 or ID == 245662005 then
         return "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular"
-    elseif ID == 16472538603 then
+    elseif ID == 16472538603 or ID == 5674379281 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Tha%20Bronx%203"
-    elseif ID == 1240123653 then
+    elseif ID == 1240123653 or ID == 504035427 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Zombie%20Attack"
-    elseif ID == 8554378337 then
+    elseif ID == 8554378337 or ID == 3262314006 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Weapon%20Fighting%20Simulator"
-    elseif ID == 16732694052 then
+    elseif ID == 16732694052 or ID == 5750914919 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Fisch"
-    elseif ID == 126884695634066 then
+    elseif ID == 126884695634066 or ID == 7436755782 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Grow%20A%20Garden"
     elseif ID == 116495829188952 or ID == 7018190066 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Dead%20Rails"
+    elseif ID == 13772394625 or ID == 4777817887 then
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blade%20Ball"
     else
         print("Game is not supported.")
         return nil
