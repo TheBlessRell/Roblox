@@ -42,7 +42,7 @@ MakeNotifi({
 local Main = MakeTab({Name = "INFO"})
 
 local Image = AddImageLabel(Main, {
-  Name = "PresidentZuyi",
+  Name = "President Rell",
   Image = "rbxassetid://84442594910404"
 })
 local Paragraph1 = AddParagraph(Main, {"W RELL", "CREDIT"})
