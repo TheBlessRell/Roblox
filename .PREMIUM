@@ -23,8 +23,6 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blue%20Lock"
     elseif ID == 6884319169 or ID == 2626227051 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Mic%20Up"
-    elseif ID == 85896571713843 or ID == 6504986360 then
-        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Bubble%20Gum%20Simulator%20Infinity"
     elseif ID == 10449761463 or ID == 3808081382 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/The%20Strongest%20Battlegrounds"
     else
