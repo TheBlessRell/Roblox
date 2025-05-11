@@ -19,8 +19,6 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Grow%20A%20Garden"
     elseif ID == 116495829188952 or ID == 7018190066 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Dead%20Rails"
-    elseif ID == 13772394625 or ID == 4777817887 then
-        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blade%20Ball"
     elseif ID == 18668065416 or ID == 6325068386 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Blue%20Lock"
     elseif ID == 6884319169 or ID == 2626227051 then
