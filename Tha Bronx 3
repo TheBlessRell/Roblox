@@ -1,85 +1,51 @@
--- Initialize the GUI (The Shop)
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+-- Initialize the GUI (Rell Hub)
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local UIPadding = Instance.new("UIPadding")
 local ButtonStartJob = Instance.new("TextButton")
 local ButtonAutoFarm = Instance.new("TextButton")
-local StatusLabel = Instance.new("TextLabel")
 
--- Set the parent of the GUI to the player's PlayerGui
-ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.Name = "TheShopUI"
+-- Set the parent of the GUI to the player's screen
+ScreenGui.Parent = game.CoreGui
+ScreenGui.Name = "RellHubUI"
 
--- Frame setup
+-- Frame for the main content
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Frame.Position = UDim2.new(0.3, 0, 0.3, 0)
 Frame.Size = UDim2.new(0, 400, 0, 400)
+Frame.Active = true
+Frame.Draggable = true
 
--- Dragging support for both PC and mobile
-local UIS = game:GetService("UserInputService")
-local dragging, dragInput, dragStart, startPos
-local function drag(frame)
-    frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = true
-            dragStart = input.Position
-            startPos = frame.Position
-
-            input.Changed:Connect(function()
-                if input.UserInputState == Enum.UserInputState.End then
-                    dragging = false
-                end
-            end)
-        end
-    end)
-
-    frame.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            dragInput = input
-        end
-    end)
-
-    UIS.InputChanged:Connect(function(input)
-        if input == dragInput and dragging then
-            local delta = input.Position - dragStart
-            frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-        end
-    end)
-end
-drag(Frame)
-
--- Padding
+-- Padding inside the frame for better spacing
 UIPadding.Parent = Frame
 UIPadding.PaddingTop = UDim.new(0, 10)
 UIPadding.PaddingLeft = UDim.new(0, 10)
 UIPadding.PaddingRight = UDim.new(0, 10)
 
--- Title
+-- Title label
 Title.Parent = Frame
 Title.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 Title.Size = UDim2.new(1, 0, 0.2, 0)
-Title.Text = "The Shop"
+Title.Text = "Rell Hub"
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 28
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BorderSizePixel = 0
 
--- Start Job Button
+-- Button to start the job
 ButtonStartJob.Parent = Frame
 ButtonStartJob.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 ButtonStartJob.Size = UDim2.new(0.8, 0, 0.1, 0)
-ButtonStartJob.Position = UDim2.new(0.1, 0, 0.25, 0)
+ButtonStartJob.Position = UDim2.new(0.1, 0, 0.2, 0)
 ButtonStartJob.Text = "Start Job"
 ButtonStartJob.Font = Enum.Font.Gotham
 ButtonStartJob.TextSize = 20
 ButtonStartJob.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonStartJob.BorderSizePixel = 0
 
--- AutoFarm Button
+-- Button to trigger auto farm
 ButtonAutoFarm.Parent = Frame
 ButtonAutoFarm.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 ButtonAutoFarm.Size = UDim2.new(0.8, 0, 0.1, 0)
@@ -90,46 +56,39 @@ ButtonAutoFarm.TextSize = 20
 ButtonAutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
 ButtonAutoFarm.BorderSizePixel = 0
 
--- Status label
-StatusLabel.Parent = Frame
-StatusLabel.BackgroundTransparency = 1
-StatusLabel.Size = UDim2.new(1, 0, 0.1, 0)
-StatusLabel.Position = UDim2.new(0, 0, 0.9, 0)
-StatusLabel.TextColor3 = Color3.new(1, 1, 1)
-StatusLabel.Font = Enum.Font.Gotham
-StatusLabel.TextSize = 18
-StatusLabel.Text = "Ready."
-
--- Configuration
+-- Configuration for server hop and farming
 getgenv().cfg = {
     ["switch_servers_when_no_wood"] = true,
     ["serverhop_timeout"] = 80
 }
 
--- Game Load Wait
+-- Wait for the game to load
 pcall(function()
     repeat task.wait(3) until game:IsLoaded()
-    repeat task.wait(3) until LocalPlayer:FindFirstChild("PlayerGui"):FindFirstChild("BronxLoadscreen")
+    repeat task.wait(3) until game:GetService("Players").LocalPlayer.PlayerGui.BronxLoadscreen
 end)
 
 pcall(function()
-    repeat firesignal(LocalPlayer.PlayerGui.BronxLoadscreen.Frame.play.MouseButton1Click) until not LocalPlayer.PlayerGui:FindFirstChild("BronxLoadscreen")
+    repeat firesignal(game:GetService("Players").LocalPlayer.PlayerGui.BronxLoadscreen.Frame.play.MouseButton1Click) until not game:GetService("Players").LocalPlayer.PlayerGui.BronxLoadscreen
 end)
 
--- Functions
+pcall(function()
+    repeat task.wait(1) until not game:GetService("Players").LocalPlayer.PlayerGui.BronxLoadscreen
+end)
+
+-- Start job function to begin automation
 local function startjob()
     local jobStartCFrame = workspace.ConstructionStuff["Start Job"].CFrame
-    if not LocalPlayer:GetAttribute("IsWorking") then
-        LocalPlayer.Character.HumanoidRootPart.CFrame = jobStartCFrame
+    if not game.Players.LocalPlayer:GetAttribute("WorkingJob") or game.Players.LocalPlayer:GetAttribute("WorkingJob") == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = jobStartCFrame
         fireproximityprompt(workspace.ConstructionStuff["Start Job"].Prompt)
-        StatusLabel.Text = "Job started!"
     end
 end
 
+-- Auto farm functions
 local function autoequipwood()
-    local bp = LocalPlayer.Backpack:FindFirstChild("PlyWood")
-    if bp then
-        bp.Parent = LocalPlayer.Character
+    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("PlyWood") then
+        game:GetService("Players").LocalPlayer.Backpack.PlyWood.Parent = game:GetService("Players").LocalPlayer.Character
     end
 end
 
@@ -151,106 +110,98 @@ end
 
 local function mainautofarm()
     for _, v in pairs(workspace.ConstructionStuff:GetDescendants()) do
-        if v:IsA("Part") and v:FindFirstChild("Attachment") then
-            local gui = v.Attachment:FindFirstChild("Gui")
-            if gui and gui:FindFirstChild("Label") then
-                local text = gui.Label.Text
-                if not string.find(text, "RESETS") then
-                    LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                    break
-                end
+        if v:IsA("Part") and string.find(v.Name, "Prompt") then
+            local text = v:FindFirstChild("Attachment"):FindFirstChild("Gui"):FindFirstChild("Label").Text
+            if not string.find(text, "RESETS") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
             end
         end
     end
-
-    if not (LocalPlayer.Backpack:FindFirstChild("PlyWood") or LocalPlayer.Character:FindFirstChild("PlyWood")) then
-        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1728, 371, -1177)
-        StatusLabel.Text = "Teleporting to wood area..."
+    if not (game.Players.LocalPlayer.Backpack:FindFirstChild("PlyWood") or game.Players.LocalPlayer.Character:FindFirstChild("PlyWood")) then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1728, 371, -1177)
     end
 end
 
--- Server hop function
-local canTeleport = true
+-- Server hopping logic
 local function TPReturner()
-    if not canTeleport then return end
-    canTeleport = false
-    StatusLabel.Text = "Searching for new server..."
-
     local PlaceID = game.PlaceId
+    local AllIDs = {}
     local Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
 
     for _, v in pairs(Site.data) do
-        if v.playing < v.maxPlayers then
+        local ID = tostring(v.id)
+        if tonumber(v.maxPlayers) > tonumber(v.playing) then
+            table.insert(AllIDs, ID)
+            wait(2)
             pcall(function()
-                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, v.id, LocalPlayer)
+                game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
             end)
-            break
+            wait(4)
         end
     end
-
-    task.delay(10, function()
-        canTeleport = true
-    end)
 end
 
+-- Check for no wood
 local function checkfornowood()
     if not cfg["switch_servers_when_no_wood"] then return end
-    local noneAvailable = true
+    local x = true
     for _, v in pairs(workspace.ConstructionStuff:GetDescendants()) do
-        if v:IsA("Part") and v:FindFirstChild("Attachment") then
-            local label = v.Attachment:FindFirstChild("Gui"):FindFirstChild("Label")
-            if label and not string.find(label.Text, "RESETS") then
-                noneAvailable = false
+        if v:IsA("Part") and string.find(v.Name, "Prompt") then
+            local text = v:FindFirstChild("Attachment"):FindFirstChild("Gui"):FindFirstChild("Label").Text
+            if not string.find(text, "RESETS") then
+                x = false
                 break
             end
         end
     end
-    if noneAvailable then
-        StatusLabel.Text = "No wood left. Hopping..."
-        TPReturner()
-    end
+    if x then TPReturner() end
 end
 
--- Timeout hop
+-- Timeout for server hop
 local start = tick()
-task.spawn(function()
+local function timeout()
     while true do
         task.wait(3)
-        if tick() - start >= cfg["serverhop_timeout"] then
+        local currenttime = tick() - start
+        if currenttime >= cfg["serverhop_timeout"] then
             TPReturner()
         end
     end
-end)
+end
 
--- Start job automatically
+-- Auto start job and autofarm logic
 task.spawn(function()
-    repeat task.wait(1) until LocalPlayer.Character
+    repeat task.wait(1) until game.Players.LocalPlayer and game.Players.LocalPlayer.Character
     startjob()
 end)
 
--- Autofarm toggle
-local autoFarmRunning = false
-ButtonAutoFarm.MouseButton1Click:Connect(function()
-    if autoFarmRunning then return end
-    autoFarmRunning = true
-    ButtonAutoFarm.Text = "AutoFarm Running..."
-    StatusLabel.Text = "AutoFarm started"
+task.spawn(function()
+    while task.wait(1/10) do
+        xpcall(wood, debug.traceback)
+        xpcall(grabwood, debug.traceback)
+        xpcall(autoequipwood, debug.traceback)
+        xpcall(mainautofarm, debug.traceback)
+    end
+end)
 
+-- Button functions (optional backup)
+ButtonStartJob.MouseButton1Click:Connect(startjob)
+
+ButtonAutoFarm.MouseButton1Click:Connect(function()
     task.spawn(function()
-        while task.wait(0.1) do
-            xpcall(wood, warn)
-            xpcall(grabwood, warn)
-            xpcall(autoequipwood, warn)
-            xpcall(mainautofarm, warn)
+        while task.wait(1/10) do
+            xpcall(wood, debug.traceback)
+            xpcall(grabwood, debug.traceback)
+            xpcall(autoequipwood, debug.traceback)
+            xpcall(mainautofarm, debug.traceback)
         end
     end)
 end)
 
-ButtonStartJob.MouseButton1Click:Connect(startjob)
+-- Start server hop timeout
+task.spawn(timeout)
 
--- Check for no wood every few seconds
-task.spawn(function()
-    while task.wait(4) do
-        xpcall(checkfornowood, warn)
-    end
-end)
+-- Periodically check for no wood
+while task.wait(4) do
+    xpcall(checkfornowood, debug.traceback)
+end
