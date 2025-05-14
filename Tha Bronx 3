@@ -119,7 +119,7 @@ end)
 -- Functions
 local function startjob()
     local jobStartCFrame = workspace.ConstructionStuff["Start Job"].CFrame
-    if not LocalPlayer:GetAttribute("WorkingJob") then
+    if not LocalPlayer:GetAttribute("IsWorking") then
         LocalPlayer.Character.HumanoidRootPart.CFrame = jobStartCFrame
         fireproximityprompt(workspace.ConstructionStuff["Start Job"].Prompt)
         StatusLabel.Text = "Job started!"
