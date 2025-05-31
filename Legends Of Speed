@@ -2,7 +2,6 @@ local VLib = loadstring(game:HttpGet("https://gitlab.com/L1ZOT/test-project/-/ra
 local Win = VLib:Window("REUNION HUB", "Speed of Legends")
 local Main = Win:Tab("Main")
 local Autofarm = Win:Tab("Autofarm")
-local Credits = Win:Tab("Credits")
 
 if game.workspace:FindFirstChild("ManahubPart") == nil then
     local ManahubPart = Instance.new("Part")
@@ -112,49 +111,4 @@ Autofarm:Button("Collect Chests", false, function()
     game:GetService("ReplicatedStorage").rEvents.checkChestRemote:InvokeServer("Enchanted Chest")
     wait()
     game:GetService("ReplicatedStorage").rEvents.collectCourseChestRemote:InvokeServer(workspace.rewardChests.rewardChest)
-end)
-
--- ✅ Updated Credits Section
-Credits:Button("Rell", function()
-    setclipboard("https://discord.gg/srWfKRx745")
-end)
-
-Credits:Button("Rell", function()
-    setclipboard("https://discord.gg/srWfKRx745")
-end)
-
-Credits:Button("UI Designer: Rell", function()
-    setclipboard("https://discord.gg/srWfKRx745")
-end)
-
-Credits:Button("The Shop Discord Server", function()
-    setclipboard("https://discord.gg/srWfKRx745")
-    local req = (syn and syn.request) or (http and http.request) or http_request
-    if req then
-        req({
-            Url = 'http://127.0.0.1:6463/rpc?v=1',
-            Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json',
-                Origin = 'https://discord.com'
-            },
-            Body = game:GetService('HttpService'):JSONEncode({
-                cmd = 'INVITE_BROWSER',
-                nonce = game:GetService('HttpService'):GenerateGUID(false),
-                args = {code = 'srWfKRx745'}
-            })
-        })
-    end
-end)
-
-Credits:line()
-
-Credits:Button("Destroy Gui", function()
-    game.CoreGui:FindFirstChild("woof"):Destroy()
-end)
-
-Credits:Button("Rejoin", function()
-    local ts = game:GetService("TeleportService")
-    local p = game:GetService("Players").LocalPlayer
-    ts:Teleport(game.PlaceId, p)
 end)
