@@ -511,3 +511,365 @@ else
 end
   end
 }) 
+
+local Main = MakeTab({Name = "Flows"})
+
+AddButton(Main, { 
+  Name = "Buddha's Blessing", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Buddha's Blessing"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Lightning", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Lightning"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Puzzle", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Puzzle"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Genius", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Genius"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Monster", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Monster"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Ice", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Ice"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Demon Wings", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Demon Wings"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Trap", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Trap"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Stealth", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Stealth"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Snake", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Snake"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Dribbler", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Dribbler"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Bee Freestyle", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Bee Freestyle"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Wild Card", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Wild Card"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "King's Instinct", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "King's Instinct"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Awakened Genius", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Awakened Genius"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Emperor", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Emperor"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Soul Harvester", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Soul Harvester"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "Destructive Impulses", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local flow = playerStats:FindFirstChild("Flow")
+    if flow and flow:IsA("StringValue") then
+        flow.Value = "Destructive Impulses"
+    else
+        warn("Flow not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
