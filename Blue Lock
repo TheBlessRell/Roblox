@@ -7,7 +7,19 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/hzhzh
 MakeWindow({
   Hub = {
     Title = "REUNION HUB",
-    Animation = "BLUE LOCK"
+    nimation = "RELL DID IT"  },
+  Key = {
+    KeySystem = false,
+    Title = "🔥👀 - GET ALL STYLES - 🔥👀",
+    Description = "^ AND FLOWS! ^",
+    KeyLink = "https://discord.gg/yM9MeK37",
+    Keys = {"zbjssiisjdhd", "isopods", "huausushsj", "sshshhsshu", "sususu37"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Correct Key 🥰",
+      Incorrectkey = "False😡‼️",
+      CopyKeyLink = "Paste Copied Link To Browser"
+    }
   }
 })
 
@@ -17,7 +29,13 @@ MinimizeButton({
   Color = Color3.fromRGB(255, 255, 255),
   Corner = true,
   Stroke = true,
-  StrokeColor = Color3.fromHSV(0.5, 1, 1)
+  StrokeColor = Color3.fromHSV(0.5, 1, 1)  -- Hue: 180° for cyan
+})
+
+MakeNotifi({
+  Title = "Nice Work👏!",
+  Text = "Boom!🤤✅",
+  Time = 5
 })
 
 local Main = MakeTab({Name = "INFO"})
@@ -26,44 +44,37 @@ local Image = AddImageLabel(Main, {
   Name = "President Rell",
   Image = "rbxassetid://84442594910404"
 })
-
 local Paragraph1 = AddParagraph(Main, {"W RELL", "CREDIT"})
+local Paragraph2 = AddParagraph(Main, {"W RELL", "INFO"})
+local Paragraph3 = AddParagraph(Main, {"W RELL"})
+local Paragraph4 = AddParagraph(Main, {"W RE::"})
 
--- Styles tab
+-- Auto
 local Main = MakeTab({Name = "Styles"})
 
-local styles = {
-  "Isagi", "Chigiri", "Kurona", "Igaguri", "Hiori", "Gagamaru",
-  "Otoya", "Bachira", "Nagi", "Reo", "Karasu", "Shidou",
-  "Yukimiya", "NEL Bachira", "King", "Kunigami", "Aiku",
-  "Rin", "Sae", "NEL Isagi", "Kaiser", "Don Lorenzo"
-}
-
-for _, styleName in ipairs(styles) do
-  AddButton(Main, { 
-    Name = styleName, 
-    Description = "RELL DID IT", 
-    Callback = function()
+AddButton(Main, { 
+  Name = "Isagi", 
+  Description = "Why’d u click it ts pmo☠️!", 
+  Callback = function()
       local player = game.Players.LocalPlayer
-      local playerStats = player:WaitForChild("PlayerStats", 5)
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
 
-      if playerStats then
-          local style = playerStats:FindFirstChild("Style")
-          if style and style:IsA("StringValue") then
-              style.Value = styleName
-          else
-              warn("Style not found or not a StringValue.")
-          end
-      else
-          warn("PlayerStats not found.")
-      end
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "Isagi"
+    else
+        warn("Style not found or not a StringValue.")
     end
-  })
+else
+    warn("PlayerStats not found.")
 end
+  end
+}) 
 
 AddButton(Main, { 
   Name = "Chigiri", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
    Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -83,7 +94,7 @@ end
 
 AddButton(Main, { 
   Name = "Kurona", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -103,7 +114,7 @@ end
 
 AddButton(Main, { 
   Name = "Igaguri", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -123,7 +134,7 @@ end
 
 AddButton(Main, { 
   Name = "Hiori", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -143,7 +154,7 @@ end
 
 AddButton(Main, { 
   Name = "Gagamaru", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -163,7 +174,7 @@ end
 
 AddButton(Main, { 
   Name = "Otoya", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -183,7 +194,7 @@ end
 
 AddButton(Main, { 
   Name = "Bachira", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -203,7 +214,7 @@ end
 
 AddButton(Main, { 
   Name = "Nagi", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -223,7 +234,7 @@ end
 
 AddButton(Main, { 
   Name = "Reo", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -243,7 +254,7 @@ end
 
 AddButton(Main, { 
   Name = "Karasu", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -263,7 +274,7 @@ end
 
 AddButton(Main, { 
   Name = "Shidou", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -283,7 +294,7 @@ end
 
 AddButton(Main, { 
   Name = "Yukimiya", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -303,7 +314,7 @@ end
 
 AddButton(Main, { 
   Name = "NEL Bachira", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -323,7 +334,7 @@ end
 
 AddButton(Main, { 
   Name = "King", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -343,7 +354,7 @@ end
 
 AddButton(Main, { 
   Name = "Kunigami", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -363,7 +374,7 @@ end
 
 AddButton(Main, { 
   Name = "Aiku", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -383,7 +394,7 @@ end
 
 AddButton(Main, { 
   Name = "Rin", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -403,7 +414,7 @@ end
 
 AddButton(Main, { 
   Name = "Sae", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -423,7 +434,7 @@ end
 
 AddButton(Main, { 
   Name = "NEL Isagi", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -443,7 +454,7 @@ end
 
 AddButton(Main, { 
   Name = "Kaiser", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -463,7 +474,7 @@ end
 
 AddButton(Main, { 
   Name = "Don Lorenzo", 
-  Description = "RELL DID IT", 
+  Description = "Why’d u click it ts pmo☠️!", 
   Callback = function()
       local player = game.Players.LocalPlayer
 local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
@@ -472,6 +483,26 @@ if playerStats then
     local style = playerStats:FindFirstChild("Style")
     if style and style:IsA("StringValue") then
         style.Value = "Don Lorenzo"
+    else
+        warn("Style not found or not a StringValue.")
+    end
+else
+    warn("PlayerStats not found.")
+end
+  end
+}) 
+
+AddButton(Main, { 
+  Name = "NEL Rin", 
+  Description = "Why’d u click it ts pmo☠️!", 
+   Callback = function()
+      local player = game.Players.LocalPlayer
+local playerStats = player:WaitForChild("PlayerStats", 5) -- wait up to 5 seconds for PlayerStats
+
+if playerStats then
+    local style = playerStats:FindFirstChild("Style")
+    if style and style:IsA("StringValue") then
+        style.Value = "NEL Rin"
     else
         warn("Style not found or not a StringValue.")
     end
