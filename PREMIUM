@@ -21,6 +21,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Mic%20Up"
     elseif ID == 7215881810 or ID == 2807944996 then
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/No%20Limit%3A%20Strongest%20Punch%20Simulator"
+    elseif ID == 6875469709 or ID == 4582358979
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Arm%20Wrestle%20Simulator"
     else
         print("Game is not supported.")
         return nil
