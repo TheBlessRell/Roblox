@@ -5,7 +5,7 @@ local ThemeManager = loadstring(game:HttpGet(repo ..'Gui%20Lib%20%5BThemeManager
 local SaveManager = loadstring(game:HttpGet(repo ..'Gui%20Lib%20%5BSaveManager%5D'))()
 
 local Window = Library:CreateWindow({
-    Title = 'The Shop',
+    Title = 'REUNION HUB',
     Center = true,
     AutoShow = true,
     TabPadding = 8,
