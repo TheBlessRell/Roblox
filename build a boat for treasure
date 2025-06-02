@@ -1,0 +1,305 @@
+if game.PlaceId ~= 537413528 then
+    return
+end
+
+local ImGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
+local PrefabsId = `rbxassetid://{ImGui.PrefabsId}`
+
+ImGui:Init({
+    Prefabs = game:GetService("InsertService"):LoadLocalAsset(PrefabsId)
+})
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local VirtualUser = game:GetService("VirtualUser")
+local connection
+
+local Exploit = ImGui:TabsWindow({
+    Title = "REUNION HUB",
+    Size = UDim2.fromOffset(252, 426),
+    Position = UDim2.new(0.5, 7, 0.5, -250),
+    NoClose = true,
+})
+
+local AutoFarm = Exploit:CreateTab({
+    Name = "AutoFarm"
+})
+
+local function enableAntiAFK()
+    if not connection then
+        connection = player.Idled:Connect(function()
+            if getgenv().afk6464 then
+                VirtualUser:CaptureController()
+                VirtualUser:ClickButton2(Vector2.new())
+            end
+        end)
+    end
+end
+
+local function disableAntiAFK()
+    if connection then
+        connection:Disconnect()
+        connection = nil
+    end
+end
+
+local function loop()
+    while true do
+        if getgenv().afk6464 then
+            enableAntiAFK()
+        else
+            disableAntiAFK()
+        end
+        wait(1)
+    end
+end
+
+spawn(loop)
+
+if not getgenv().afk6464 then
+    getgenv().afk6464 = false
+end
+
+local AntiAfkBool
+
+local AntiAfkToggle = AutoFarm:Checkbox({
+    Label = "Anti-Afk",
+    Value = getgenv().afk6464,
+    Callback = function(self, Value)
+        AntiAfkBool = Value
+        getgenv().afk6464 = Value
+    end,
+})
+
+local Silent = false
+local AutoFarmBool
+local TriggerChest = workspace.BoatStages.NormalStages.TheEnd.GoldenChest.Trigger
+
+local AutoFarmToggle = AutoFarm:Checkbox({
+    Label = "AutoFarm",
+    Value = false,
+    Callback = function(self, Value)
+        AutoFarmBool = Value
+        getgenv().AF = Value
+
+        if not Value then
+            TriggerChest.CFrame = CFrame.new(-55.7065125, -358.739624, 9492.35645, 0, 0, -1, 0, 1, 0, 1, 0, 0) 
+        end
+
+        character = player.Character or player.CharacterAdded:Wait()
+        humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        humanoid = character:FindFirstChildOfClass("Humanoid") or character:WaitForChild("Humanoid")
+
+        local function startAutoFarm()
+            if Value == false then return end
+
+            local character = player.Character or player.CharacterAdded:Wait()
+            local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+            local humanoid = character:FindFirstChildOfClass("Humanoid") or character:WaitForChild("Humanoid")
+
+            local newPart = Instance.new("Part")
+            newPart.Size = Vector3.new(5, 1, 5)
+            newPart.Transparency = 1
+            newPart.CanCollide = true
+            newPart.Anchored = true
+            newPart.Parent = workspace
+
+            local function TPAF(iteration)
+                if not Silent then
+                    if Value == false or getgenv().AF == false then return end
+                    if iteration == 5 then
+                        TriggerChest.CFrame = CFrame.new(-51, 65, 984 + 4 * 770)
+                        task.delay(0.8, function()
+                            workspace.ClaimRiverResultsGold:FireServer()
+                        end)
+                        humanoidRootPart.CFrame = CFrame.new(-51, 65, 984 + (iteration - 1) * 770)
+                    else
+                        if iteration == 1 then
+                            humanoidRootPart.CFrame = CFrame.new(160.16104125976562, 29.595888137817383, 973.813720703125)
+                        else
+                            humanoidRootPart.CFrame = CFrame.new(-51, 65, 984 + (iteration - 1) * 770)
+                        end
+                    end
+                    newPart.Position = humanoidRootPart.Position - Vector3.new(0, 2, 0)
+
+                    if iteration == 1 then
+                        wait(2.3)
+                    else
+                        repeat
+                            task.wait()
+                        until #tostring(game:GetService("Players").LocalPlayer.OtherData:FindFirstChild("Stage"..(iteration-1)).Value) > 2
+                    end
+                    if iteration ~= 4 then
+                        workspace.ClaimRiverResultsGold:FireServer()
+                    end
+                    if iteration == 10 then
+                        if game:GetService("Lighting").OutdoorAmbient == Color3.fromRGB(200, 200, 200) or game:GetService("Lighting").OutdoorAmbient == Color3.fromRGB(255 , 255, 255) then
+                            wait(0.1)
+                            if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z > 7529.08984 then
+                                game.Players.LocalPlayer.Character:BreakJoints()
+                            end
+                        end
+                    end
+                else
+                    if Value == false or getgenv().AF == false then return end
+                    if iteration == 1 then
+                        humanoidRootPart.CFrame = CFrame.new(160.16104125976562, 29.595888137817383, 973.813720703125)
+                    elseif iteration == 5 then
+                        TriggerChest.CFrame = CFrame.new(70.02417755126953, 138.9026336669922, 1371.6341552734375 + 3 * 770)
+                        task.delay(0.8, function()
+                            workspace.ClaimRiverResultsGold:FireServer()
+                        end)
+                        humanoidRootPart.CFrame = CFrame.new(70.02417755126953, 138.9026336669922, 1371.6341552734375 + (iteration - 2) * 770)
+                    else
+                        humanoidRootPart.CFrame = CFrame.new(70.02417755126953, 138.9026336669922, 1371.6341552734375 + (iteration - 2) * 770)
+                    end
+
+                    newPart.Position = humanoidRootPart.Position - Vector3.new(0, 2, 0)
+
+                    if iteration == 1 then
+                        wait(2.3)
+                    else
+                        repeat
+                            task.wait()
+                        until #tostring(game:GetService("Players").LocalPlayer.OtherData:FindFirstChild("Stage"..(iteration-1)).Value) > 2
+                    end
+                    if iteration ~= 4 then
+                        workspace.ClaimRiverResultsGold:FireServer()
+                    end
+                    if iteration == 10 then
+                        if game:GetService("Lighting").OutdoorAmbient == Color3.fromRGB(200, 200, 200) or game:GetService("Lighting").OutdoorAmbient == Color3.fromRGB(255 , 255, 255) then
+                            wait(0.1)
+                            if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z > 7529.08984 then
+                                game.Players.LocalPlayer.Character:BreakJoints()
+                            end
+                        end
+                    end
+                end
+            end
+
+            for i = 1, 10 do
+                if not Value then
+                    break
+                end
+                TPAF(i)
+            end
+
+            newPart:Destroy()
+        end
+
+        local function onCharacterRespawned()
+            if getgenv().AF == true then
+                local character = player.Character or player.CharacterAdded:Wait()
+                character:WaitForChild("HumanoidRootPart")
+                startAutoFarm()
+            end
+        end
+
+        if Value then
+            game.Players.LocalPlayer.Character:BreakJoints()
+            wait(1)
+            game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterRespawned)
+        else
+            game.Players.LocalPlayer.CharacterAdded:Connect(function() end)
+        end
+    end,
+})
+
+local MakeItSilentBool
+
+local MakeItSilentToggle = AutoFarm:Checkbox({
+    Label = "Make it Silent",
+    Value = false,
+    Callback = function(self, Value)
+        MakeItSilentBool = Value
+        Silent = Value
+    end,
+})
+
+AutoFarm:Separator({
+    Text = "Stats"
+})
+
+local ElapsedTime = AutoFarm:Label({
+    Text = "Elapsed time: 00:00:00"
+})
+
+local GoldBlockGained = AutoFarm:Label({
+    Text = "GoldBlock Gained: "
+})
+
+local GoldGainedLabel = AutoFarm:Label({
+    Text = "Gold Gained: "
+})
+
+local GoldPerHourLabel = AutoFarm:Label({
+    Text = "Gold per hour: "
+})
+
+local clockTime = 0
+local running = false
+local totalGoldGained = 0
+local Ftime = 0 
+local totalGoldBlock = 0
+local GoldPerHour = 0
+local lastGoldValue = game:GetService("Players").LocalPlayer.Data.Gold.Value
+local IGBLOCK = game:GetService("Players").LocalPlayer.Data.GoldBlock.Value
+
+local function formatTime(seconds)
+    local hours = math.floor(tonumber(seconds) / 3600)
+    local minutes = math.floor((seconds % 3600) / 60)
+    local sec = seconds % 60
+    return string.format("%02d:%02d:%02d", hours, minutes, sec)
+end
+
+local function startClock()
+    if running then return end
+    running = true
+
+    while running do
+        if getgenv().AF then
+            clockTime = clockTime + 1
+        else
+            running = false
+        end
+        task.wait(1) 
+    end
+end
+
+game:GetService("RunService").Stepped:Connect(function()
+    if getgenv().AF and not running then
+        wait(5)
+        startClock()
+    end
+end)
+
+function initclock()
+while true do
+    local FinalGold = game:GetService("Players").LocalPlayer.Data.Gold.Value
+    Ftime = formatTime(clockTime)
+    local GoldGained = FinalGold - lastGoldValue
+    totalGoldGained = totalGoldGained + GoldGained
+    local FGBLOCK = game:GetService("Players").LocalPlayer.Data.GoldBlock.Value
+    totalGoldBlock = FGBLOCK - IGBLOCK
+    GoldPerHour = (totalGoldGained / clockTime) * 3600
+
+    ElapsedTime.Text = "Elapsed Time: " .. Ftime
+    GoldBlockGained.Text = "Gold Blocks Gained: " .. totalGoldBlock
+    GoldGainedLabel.Text = "Gold Gained: " .. totalGoldGained
+    GoldPerHourLabel.Text = "Gold Per Hour: " .. tostring(math.floor(GoldPerHour))
+
+    lastGoldValue = FinalGold
+    wait(1)
+end
+end
+
+GoldPerHour = 0
+
+function init()
+    local initclock = coroutine.create(initclock)
+    coroutine.resume(initclock)
+end
+
+init()
+warn("/foggyhub/ - The script loaded without any errors")
