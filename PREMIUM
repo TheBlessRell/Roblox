@@ -23,6 +23,8 @@ function GetGame()
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/No%20Limit%3A%20Strongest%20Punch%20Simulator"
     elseif ID == 6875469709 or ID == 4582358979
         return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Arm%20Wrestle%20Simulator"
+    elseif ID == 537413528 or ID == 210851291
+        return "https://raw.githubusercontent.com/TheBlessRell/Roblox/refs/heads/main/Build%20A%20Boat%20For%20Treasure"
     else
         print("Game is not supported.")
         return nil
