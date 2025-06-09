@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MercyyLua/ff2-mobile/refs/heads/main/Mobile"))()
