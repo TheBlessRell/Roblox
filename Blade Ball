@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sirapobsriumang/Blade-ball/refs/heads/main/Blade-ball-free.lua"))()
