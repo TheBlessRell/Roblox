@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZenkoDev-1/Fun-Troll-Tower/refs/heads/main/1", true))()
