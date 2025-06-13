@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheMugenKing02/Troll-Challenge-Tower/refs/heads/main/1", true))()
