@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kylosilly/Astolfo-Ware-V2/main/Misc%20Scripts/Criminal%20Tycoon%20Auto%20Farm.lua"))()
